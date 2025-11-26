@@ -120,29 +120,16 @@ PR #2 ([https://github.com/nqou-net/article-interviewer/pull/2](https://github.c
 ### 1. YAML フロントマターのフォーマット
 
 **指摘内容：**
-各エージェントのYAMLフロントマターがmarkdownコードブロック（\`\`\`yaml）で囲まれていましたが、GitHub Copilotのカスタムエージェント仕様では、コードブロックで囲まずに直接YAMLフロントマターを記述する必要があります。
+各エージェントのYAMLフロントマターがmarkdownコードブロック（3つのバッククォート + yaml）で囲まれていましたが、GitHub Copilotのカスタムエージェント仕様では、コードブロックで囲まずに直接YAMLフロントマターを記述する必要があります。
 
-**修正前：**
-```yaml
-## Content Strategist Agent
+**修正前の形式：**
+- エージェント定義がコードブロックで囲まれている
+- YAMLフロントマターが認識されない
 
-```yaml
----
-name: content_strategist
-description: Expert content strategist...
----
-\```
-```
-
-**修正後：**
-```yaml
-## Content Strategist Agent
-
----
-name: content_strategist
-description: Expert content strategist...
----
-```
+**修正後の形式：**
+- コードブロックを削除
+- YAMLフロントマターを直接記述（`---` で囲む）
+- GitHub Copilotが正しく認識できる
 
 ### 2. ツール配列の一貫性
 
