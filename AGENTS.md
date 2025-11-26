@@ -359,6 +359,7 @@ Status: [Approved / Needs Revision]
 
 ### Typical Workflow:
 
+#### Linear Workflow (Ideal for Simple Articles)
 ```text
 1. Content Strategist → Plan & Outline
 2. Interview Facilitator → Gather Information
@@ -368,13 +369,55 @@ Status: [Approved / Needs Revision]
 6. Publish
 ```
 
+#### Iterative Workflow (Recommended for Complex Articles)
+```text
+1. Content Strategist → Plan & Outline
+   ↓
+2. SEO Optimizer (Early) → Identify target keywords & structure
+   ↓
+3. Interview Facilitator → Gather Information
+   ↓
+4. Technical Writer → Create Draft
+   ↓
+5. SEO Optimizer (Late) → Fine-tune optimization
+   ↓
+6. Quality Assurance → Review & Validate
+   ↓
+7. [If issues found] → Return to appropriate agent (Technical Writer/SEO)
+   ↓
+8. Quality Assurance → Final validation
+   ↓
+9. Publish
+```
+
 ### Tips for Best Results:
 
-- Use agents sequentially rather than simultaneously
-- Provide clear context when invoking each agent
-- Save interview notes and outlines for reference
-- Iterate based on QA feedback
-- Keep article source materials organized
+- **Consider SEO early**: Involve SEO Optimizer during planning phase to inform content structure
+- **Expect iterations**: Plan for 1-2 rounds of QA feedback and revisions
+- **Provide clear context**: Pass key insights from each agent to the next
+- **Save intermediate outputs**: Keep interview notes, outlines, and drafts for reference
+- **Keep article source materials organized**: Use consistent naming and folder structure
+- **Document special patterns**: Note successful approaches (e.g., using PR reviews as interview material)
+
+### Alternative Patterns:
+
+**Self-Interview Pattern**: When writing about your own work:
+1. Use Content Strategist to frame self-reflection questions
+2. Document your process as "interview responses"
+3. Use code reviews, git history, or project artifacts as additional "interview material"
+4. Proceed with Technical Writer to transform into article
+
+**Multi-Source Interview Pattern**: When combining multiple perspectives:
+1. Interview Facilitator conducts separate sessions with each expert
+2. Content Strategist synthesizes common themes
+3. Technical Writer weaves multiple viewpoints into cohesive narrative
+
+### Localization Considerations:
+
+For non-English content (e.g., Japanese articles):
+- **Technical Writer**: Ensure natural phrasing in target language while maintaining technical accuracy
+- **SEO Optimizer**: Research language-specific keywords and search patterns
+- **Quality Assurance**: Verify cultural appropriateness and idiomatic expressions
 
 ---
 
@@ -398,3 +441,36 @@ When adding new custom agents or modifying existing ones:
 3. Provide concrete examples
 4. Document tools and commands needed
 5. Update this usage guide accordingly
+
+---
+
+## Lessons Learned from Practice
+
+Based on actual article creation experience:
+
+### What Worked Well:
+
+1. **Clear Role Separation**: Each agent's distinct focus prevented scope creep and maintained quality
+2. **Concrete Examples**: Agent definitions with specific output formats improved consistency
+3. **Boundary Definition**: Explicit "do not" guidelines prevented agents from overstepping
+4. **Structured Workflow**: Sequential process provided clear path from idea to publication
+
+### Areas for Improvement:
+
+1. **Early SEO Integration**: SEO considerations should inform initial content planning, not just final optimization
+2. **Explicit Iteration**: Workflow should acknowledge that QA feedback often requires returning to earlier stages
+3. **Information Handoff**: Each agent should explicitly document what context/artifacts to pass to the next
+4. **Language-Specific Guidance**: Non-English content needs additional considerations for cultural nuance
+
+### Discovered Patterns:
+
+1. **Self-Interview**: PR reviews and project history can serve as interview material when writing about your own work
+2. **Feedback as Input**: Code review comments provide valuable content for technical articles
+3. **Meta-Documentation**: Writing about the tools you're using to write is an effective validation technique
+
+### Recommendations for Future Use:
+
+- Start each article with Content Strategist + SEO Optimizer collaboration
+- Create explicit handoff documents between agent phases
+- Maintain a "lessons learned" log for each article to improve the process
+- Consider creating agent-specific checklists for consistency
