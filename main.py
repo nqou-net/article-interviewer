@@ -27,8 +27,9 @@ def create_draft_from_interview():
     # 草案として保存
     draft_manager = DraftManager()
     
-    # タイトルを取得（最初の質問の回答）
-    title = list(answers.values())[0] if answers else None
+    # タイトルを取得（最初の質問「記事のタイトルは何ですか？」の回答）
+    title_question = "記事のタイトルは何ですか？"
+    title = answers.get(title_question) if answers else None
     
     filepath = draft_manager.save_draft(summary, title)
     

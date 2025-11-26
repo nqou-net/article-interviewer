@@ -25,10 +25,11 @@ class DraftManager:
         """草案ディレクトリが存在することを確認し、なければ作成する"""
         if not os.path.exists(self.drafts_dir):
             os.makedirs(self.drafts_dir)
-            # .gitkeepファイルを作成
+            # .gitkeepファイルを作成（存在しない場合のみ）
             gitkeep_path = os.path.join(self.drafts_dir, ".gitkeep")
-            with open(gitkeep_path, "w") as f:
-                f.write("")
+            if not os.path.exists(gitkeep_path):
+                with open(gitkeep_path, "w") as f:
+                    f.write("")
     
     def save_draft(self, content, title=None):
         """
@@ -84,6 +85,15 @@ class DraftManager:
         
         Returns:
             str: 草案の内容
+        
+        Raises:
+            FileNotFoundError: ファイルが存在しない場合
+            PermissionError: ファイルの読み取り権限がない場合
         """
-        with open(filepath, "r", encoding="utf-8") as f:
-            return f.read()
+        try:
+            with open(filepath, "r", encoding="utf-8") as f:
+                return f.read()
+        except FileNotFoundError:
+            raise FileNotFoundError(f"草案ファイルが見つかりません: {filepath}")
+        except PermissionError:
+            raise PermissionError(f"草案ファイルの読み取り権限がありません: {filepath}")
