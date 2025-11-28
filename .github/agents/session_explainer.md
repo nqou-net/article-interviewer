@@ -1,7 +1,7 @@
 ---
 name: session_explainer
 description: GitHub Copilot Tasks や AI エージェントのセッションログを初心者向けにわかりやすく解説するエージェント
-tools: ['read', 'search']
+tools: ['read', 'search', 'edit', 'bash']
 metadata:
   author: article-interviewer
   role: education
